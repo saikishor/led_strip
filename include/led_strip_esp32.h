@@ -57,7 +57,7 @@ void set_led_color(uint32_t red, uint32_t green, uint32_t blue) {
 
 void blink_rgb(int red, int green, int blue, int delay_ms) {
     set_led_color(red, green, blue);
-    vTaskDelay(pdMS_TO_TICKS(delay_ms));
+    vTaskDelay(pdMS_TO_TICKS(delay_ms/2));
     set_led_color(0, 0, 0); // Turn off the LED
-    vTaskDelay(pdMS_TO_TICKS(delay_ms));
+    vTaskDelay(pdMS_TO_TICKS(delay_ms/2));
 }
